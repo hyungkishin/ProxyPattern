@@ -1,0 +1,4 @@
+�23:32:01.671 [Test worker] INFO hello.advanced.trace.strategy.code.template.TemplateCallbackTest - 비즈니스 로직 1 실행
+k23:32:01.673 [Test worker] INFO hello.advanced.trace.strategy.code.template.TimeLogTemplate - resultTime=3
+�23:32:01.675 [Test worker] INFO hello.advanced.trace.strategy.code.template.TemplateCallbackTest - 비즈니스 로직 2 실행
+k23:32:01.675 [Test worker] INFO hello.advanced.trace.strategy.code.template.TimeLogTemplate - resultTime=0
