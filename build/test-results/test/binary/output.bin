@@ -1,3 +1,4 @@
-e22:43:53.443 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.RealSubject - 실제 객체 호출
-e22:43:54.451 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.RealSubject - 실제 객체 호출
-e22:43:55.457 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.RealSubject - 실제 객체 호출
+`00:17:21.422 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.CacheProxy - 프록시 호출
+e00:17:21.423 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.RealSubject - 실제 객체 호출
+`00:17:22.428 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.CacheProxy - 프록시 호출
+`00:17:22.429 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.CacheProxy - 프록시 호출

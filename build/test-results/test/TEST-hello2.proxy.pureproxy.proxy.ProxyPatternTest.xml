@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="hello2.proxy.pureproxy.proxy.ProxyPatternTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-09T13:43:53" hostname="sinhyeong-giui-MacBookPro.local" time="3.052">
+<testsuite name="hello2.proxy.pureproxy.proxy.ProxyPatternTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-09T15:17:21" hostname="sinhyeong-giui-MacBookPro.local" time="1.034">
   <properties/>
-  <testcase name="noProxyTest()" classname="hello2.proxy.pureproxy.proxy.ProxyPatternTest" time="3.052"/>
-  <system-out><![CDATA[22:43:53.443 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.RealSubject - 실제 객체 호출
-22:43:54.451 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.RealSubject - 실제 객체 호출
-22:43:55.457 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.RealSubject - 실제 객체 호출
+  <testcase name="cacheProxyTest()" classname="hello2.proxy.pureproxy.proxy.ProxyPatternTest" time="1.034"/>
+  <system-out><![CDATA[00:17:21.422 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.CacheProxy - 프록시 호출
+00:17:21.423 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.RealSubject - 실제 객체 호출
+00:17:22.428 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.CacheProxy - 프록시 호출
+00:17:22.429 [Test worker] INFO hello2.proxy.pureproxy.proxy.code.CacheProxy - 프록시 호출
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
