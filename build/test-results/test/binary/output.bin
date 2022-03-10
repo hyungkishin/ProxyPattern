@@ -1,6 +1,1 @@
-k09:42:31.658 [Test worker] INFO hello2.proxy.pureproxy.decorator.code.TimeDecorator - TimeDecorator 실행
-q09:42:31.659 [Test worker] INFO hello2.proxy.pureproxy.decorator.code.MessageDecorator - MessageDecorator 실행
-o09:42:31.659 [Test worker] INFO hello2.proxy.pureproxy.decorator.code.RealComponent - RealComponent 를 실행
-�09:42:31.660 [Test worker] INFO hello2.proxy.pureproxy.decorator.code.MessageDecorator - MessageDecorator 꾸미기 적용 전=data, 적용후=*****data*****
-z09:42:31.661 [Test worker] INFO hello2.proxy.pureproxy.decorator.code.TimeDecorator - TimeDecorator 종료 resultTime=2ms
-w09:42:31.661 [Test worker] INFO hello2.proxy.pureproxy.decorator.code.DecoratorPatternClient - result = *****data*****
+o13:45:14.301 [Test worker] INFO hello2.proxy.pureproxy.concreteproxy.code.ConcreteLogic - ConcreteLogic 실행
