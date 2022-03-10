@@ -1,1 +1,3 @@
-o13:45:14.301 [Test worker] INFO hello2.proxy.pureproxy.concreteproxy.code.ConcreteLogic - ConcreteLogic 실행
+k13:52:52.163 [Test worker] INFO hello2.proxy.pureproxy.concreteproxy.code.TimeProxy - TimeDecorator 실행
+o13:52:52.165 [Test worker] INFO hello2.proxy.pureproxy.concreteproxy.code.ConcreteLogic - ConcreteLogic 실행
+z13:52:52.165 [Test worker] INFO hello2.proxy.pureproxy.concreteproxy.code.TimeProxy - TimeDecorator 종료 resultTime=0ms
