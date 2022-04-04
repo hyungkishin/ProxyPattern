@@ -1,3 +1,5 @@
-k15:12:36.433 [Test worker] INFO hello2.proxy.pureproxy.concreteproxy.code.TimeProxy - TimeDecorator 실행
-o15:12:36.434 [Test worker] INFO hello2.proxy.pureproxy.concreteproxy.code.ConcreteLogic - ConcreteLogic 실행
-z15:12:36.434 [Test worker] INFO hello2.proxy.pureproxy.concreteproxy.code.TimeProxy - TimeDecorator 종료 resultTime=0ms
+f22:14:21.579 [Test worker] INFO hello2.proxy.jdkdynamic.code.TimeInvocationHandler - TimeProxy 실행
+N22:14:21.580 [Test worker] INFO hello2.proxy.jdkdynamic.code.BImpl - B 호출
+s22:14:21.580 [Test worker] INFO hello2.proxy.jdkdynamic.code.TimeInvocationHandler - TimeProxy 종료 resultTime=0
+�22:14:21.581 [Test worker] INFO hello2.proxy.jdkdynamic.JdkDynamicProxyTest - targetClass=class hello2.proxy.jdkdynamic.code.BImpl
+v22:14:21.581 [Test worker] INFO hello2.proxy.jdkdynamic.JdkDynamicProxyTest - proxyClass=class com.sun.proxy.$Proxy11
