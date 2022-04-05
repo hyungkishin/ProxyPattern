@@ -1,5 +1,4 @@
-f22:14:21.579 [Test worker] INFO hello2.proxy.jdkdynamic.code.TimeInvocationHandler - TimeProxy 실행
-N22:14:21.580 [Test worker] INFO hello2.proxy.jdkdynamic.code.BImpl - B 호출
-s22:14:21.580 [Test worker] INFO hello2.proxy.jdkdynamic.code.TimeInvocationHandler - TimeProxy 종료 resultTime=0
-�22:14:21.581 [Test worker] INFO hello2.proxy.jdkdynamic.JdkDynamicProxyTest - targetClass=class hello2.proxy.jdkdynamic.code.BImpl
-v22:14:21.581 [Test worker] INFO hello2.proxy.jdkdynamic.JdkDynamicProxyTest - proxyClass=class com.sun.proxy.$Proxy11
+U23:10:11.453 [Test worker] INFO hello2.proxy.jdkdynamic.ReflectionTest$Hello - callA
+S23:10:11.454 [Test worker] INFO hello2.proxy.jdkdynamic.ReflectionTest - result1=A
+U23:10:11.454 [Test worker] INFO hello2.proxy.jdkdynamic.ReflectionTest$Hello - callB
+S23:10:11.454 [Test worker] INFO hello2.proxy.jdkdynamic.ReflectionTest - result1=B

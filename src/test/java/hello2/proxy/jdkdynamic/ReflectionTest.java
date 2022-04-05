@@ -28,13 +28,15 @@ public class ReflectionTest {
 
     @Test
     void reflection1() throws Exception {
-        // 클래스 정보
+        // 클래스 정보 -> 클래스 메타정보를 획득한다. 내부 클래스는 구분을 위해 $ (달라) 를 사용.
         Class classHello = Class.forName("hello2.proxy.jdkdynamic.ReflectionTest$Hello");
 
         Hello target = new Hello();
-        // callA 메서드 정보
+        // callA 메서드 정보 -> getMethod ( 메소드 메타정보를 획득 ) methodCallA 는 Method 자체의 메타라 보면 된다.
         Method methodCallA = classHello.getMethod("callA");
+        // 획득한 메타정보로 실제 인스턴스의 메서드를 호출한다.
         Object result1 = methodCallA.invoke(target);
+
         log.info("result1={}", result1);
 
         // callA 메서드 정보
@@ -58,6 +60,15 @@ public class ReflectionTest {
         dynamicCall(methodCallB, target);
     }
 
+    /**
+     *
+     * @param method
+     * @param target
+     * @throws Exception
+     *
+     * 공통로직 1,2 를 한번에 처리할 수 있는 통합 공통 로직.
+     * 기존엔 메서드 이름을 직접 호출했지만, 이제는 Method 라는 메타정보를 통해서 호출할 메서드 정보가 동적으로 제공된다.
+     */
     private void dynamicCall(Method method, Object target) throws Exception {
         log.info("start");
         Object result = method.invoke(target);

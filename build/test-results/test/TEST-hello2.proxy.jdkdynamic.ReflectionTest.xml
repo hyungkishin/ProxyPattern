@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="hello2.proxy.jdkdynamic.ReflectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-04T14:10:11" hostname="sinhyeong-giui-MacBookPro.local" time="0.008">
+  <properties/>
+  <testcase name="reflection1()" classname="hello2.proxy.jdkdynamic.ReflectionTest" time="0.008"/>
+  <system-out><![CDATA[23:10:11.453 [Test worker] INFO hello2.proxy.jdkdynamic.ReflectionTest$Hello - callA
+23:10:11.454 [Test worker] INFO hello2.proxy.jdkdynamic.ReflectionTest - result1=A
+23:10:11.454 [Test worker] INFO hello2.proxy.jdkdynamic.ReflectionTest$Hello - callB
+23:10:11.454 [Test worker] INFO hello2.proxy.jdkdynamic.ReflectionTest - result1=B
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
