@@ -52,6 +52,13 @@
         log.info("result1={}", result2);
     }
 ```
+### 쉽게 이해하기 위해...
+- 필요한 재료 : 클래스의 메타정보, 클래스의 메서드 정보 (Hello 라는 클래스 안에 callA 메서드가 있다고 가정.)
+  - STEP1 클래스의 메타정보를 가져온다. Class classHello = Class.forName("package 주소 따라라라라.$해당클래스")
+  - STEP2 Hello target = new Hello(); 생성자 호출로 인스턴스를 만들어 놓는다.
+  - STEP3 메서드 정보를 얻어온다 (문자로) -> Method methodCallA = classHello.getMethod("callA")
+  - STEP4 동적으로 Call 한다. -> methodCallA.invoke(target); // 만들어둔 인스턴스에 있는 callA 메서드를 호출한다.
+---
 - 여기서 제일 중요한점은 클래스나 메서드 정보를 동적으로 변경할 수 있다는 점.
 - 영한님이 말씀하시기를, 리플렉션을 사용하면, 클래스와 메서드의 메타정보를
 - 사용해서 어플리케이션을 동적으로 유연하게 만들 수 있다고 하셨다.
