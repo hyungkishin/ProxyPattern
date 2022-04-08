@@ -5,8 +5,6 @@
 -src/main/java/hello2/proxy/trace/TraceId.java,9/0/90784f6f7c68de7beb7eb13da409a312e41154c9
 s
 Csrc/main/java/hello2/proxy/config/v1_proxy/ConcreteProxyConfig.java,6/b/6b57df5d7929ff0bfad014c6a5edb8bbd3b343a7
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 e
 5src/main/java/hello2/proxy/app/v2/OrderServiceV2.java,0/e/0ebb703242dafa966bfc97462579a2d4360f2a6c
 h
@@ -53,7 +51,3 @@ r
 Bsrc/test/java/hello2/proxy/pureproxy/decorator/code/Decorator.java,3/e/3e1a436c87d6f93f4c9a64f9480c09749694e3aa
 j
 :src/test/java/hello2/proxy/jdkdynamic/code/BInterface.java,8/c/8cac35c75acf5bfb585d7d2bd4e0171720bb2d4a
-h
-8src/main/java/hello2/proxy/app/v1/OrderRepositoryV1.java,a/4/a423a8707e6ab0142cd353e0625ae51156de3e7a
-l
-<src/main/java/hello2/proxy/app/v1/OrderControllerV1Impl.java,4/6/46c3d59f3817f64a8078e164332ab615ce7acac8

@@ -1,5 +1,5 @@
-f00:52:13.084 [Test worker] INFO hello2.proxy.jdkdynamic.code.TimeInvocationHandler - TimeProxy 실행
-N00:52:13.085 [Test worker] INFO hello2.proxy.jdkdynamic.code.AImpl - A 호출
-s00:52:13.085 [Test worker] INFO hello2.proxy.jdkdynamic.code.TimeInvocationHandler - TimeProxy 종료 resultTime=0
-�00:52:13.086 [Test worker] INFO hello2.proxy.jdkdynamic.JdkDynamicProxyTest - targetClass=class hello2.proxy.jdkdynamic.code.AImpl
-v00:52:13.086 [Test worker] INFO hello2.proxy.jdkdynamic.JdkDynamicProxyTest - proxyClass=class com.sun.proxy.$Proxy11
+}01:48:26.946 [Test worker] INFO hello2.proxy.cglib.CglibTest - targetClass=class hello2.proxy.common.service.ConcreteService
+�01:48:26.949 [Test worker] INFO hello2.proxy.cglib.CglibTest - proxyClass=class hello2.proxy.common.service.ConcreteService$$EnhancerByCGLIB$$136b8b39
+a01:48:26.949 [Test worker] INFO hello2.proxy.cglib.code.TimeMethodInterceptor - TimeProxy 실행
+e01:48:26.955 [Test worker] INFO hello2.proxy.common.service.ConcreteService - ConCreteService 호출
+n01:48:26.955 [Test worker] INFO hello2.proxy.cglib.code.TimeMethodInterceptor - TimeProxy 종료 resultTime=6

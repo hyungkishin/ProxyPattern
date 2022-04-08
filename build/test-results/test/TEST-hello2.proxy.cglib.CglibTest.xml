@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="hello2.proxy.cglib.CglibTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-08T16:48:26" hostname="sinhyeong-giui-MacBookPro.local" time="0.053">
+  <properties/>
+  <testcase name="cglib()" classname="hello2.proxy.cglib.CglibTest" time="0.053"/>
+  <system-out><![CDATA[01:48:26.946 [Test worker] INFO hello2.proxy.cglib.CglibTest - targetClass=class hello2.proxy.common.service.ConcreteService
+01:48:26.949 [Test worker] INFO hello2.proxy.cglib.CglibTest - proxyClass=class hello2.proxy.common.service.ConcreteService$$EnhancerByCGLIB$$136b8b39
+01:48:26.949 [Test worker] INFO hello2.proxy.cglib.code.TimeMethodInterceptor - TimeProxy 실행
+01:48:26.955 [Test worker] INFO hello2.proxy.common.service.ConcreteService - ConCreteService 호출
+01:48:26.955 [Test worker] INFO hello2.proxy.cglib.code.TimeMethodInterceptor - TimeProxy 종료 resultTime=6
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
