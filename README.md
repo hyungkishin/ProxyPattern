@@ -85,6 +85,10 @@
   - 그리고 이 설정도 변경 가능하다.
   - ![img_3.png](img_3.png)
   - ![img_4.png](img_4.png)
+  - 두 기술을 함께 사용할 때 부가 기능을 적용하기 위해 Spring 에서 Advice 라는 개념을 도입했다.
+  - 개발자는 InvocationHandler 나 MethodInterceptor 를 신경 쓰기 않아두 된다.
+  - ![img_5.png](img_5.png)
+  - ![img_6.png](img_6.png)
 
 
 ---
