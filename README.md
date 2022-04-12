@@ -93,4 +93,42 @@
 
 ---
 
-출처 - 김영한 스프링-핵심-원리-PDF 
+- 포인트컷 : 어디에다가 부가기능을 추가할지 말지의 필터링 로직.
+  - 주로 클래스와 메서드 이름으로 필터링 한다. 이름 그대로 어떤 포인트 (point) 에 기능을 적용할지, 않을지 잘라서 (cut) 구분한다.
+- 어드바이스: 프록시가 호출하는 부가 기능. ( 단순하게 프록시 로직 )
+- 어드바이저: 단순하게 하나의 포인트컷과 하나의 어드바이스를 가지고 있는 것.
+  - 쉽게 말해 포인트컷 + 1 어드바이스 + 1 이다. ( 포인트컷 + 2개 는 어드바이스 + 2개)
+  
+정리: 포인트컷으로 부가 기능 로직을 어디에? 적용할지 선택하고, 어드바이스로 어떤 로직을 적용할지 선택하는것.
+조언자: Advisor, 어디: PointCut, 조언: Advice
+조언자는 어디에 조언을 해야할지 알고 있다.
+
+포인트컷은 대상 여부를 확인하는 필터 역할만 담당하고, 어드바이스는 깔끔하게 부가 기능 로직만 담당한다. 둘을 합치면 어드바이저가 된다.
+스프링의 어드바이저는 하나의 포인트컷 + 하나의 어드바이스로 구성된다.
+
+![img_7.png](img_7.png)
+
+
+```java
+    @Test
+    void advisorTest1() {
+        ServiceInterface target = new ServiceImpl();
+        ProxyFactory proxyFactory = new ProxyFactory(target);
+        /* 
+        `Advisor` 인터페이스의 가장 일반적인 구현체이다. 생성자를 통해 하나의 포인트컷과 하나의 어드바이스를 넣어주면 된다. 어드바이저는 하나의 포인트컷과 하나의 어드바이스로 구성된다.
+        Pointcut.TRUE: 항상 true 를 반환하는 포인트컷이다. 이후에 직접 포인트컷을 구현해볼 것이다.
+        */
+        DefaultPointcutAdvisor advisor = new DefaultPointcutAdvisor(Pointcut.TRUE, new TimeAdvice());
+        
+        proxyFactory.addAdvisor(advisor);
+        ServiceInterface proxy = (ServiceInterface) proxyFactory.getProxy();
+
+        proxy.save();
+        proxy.find();
+    }
+```
+
+![img_8.png](img_8.png)
+
+
+출처 - 김영한 스프링-핵심-원리-PDF

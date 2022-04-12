@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="hello2.proxy.advisor.AdvisorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-12T15:53:46" hostname="sinhyeong-giui-MacBookPro.local" time="0.044">
+  <properties/>
+  <testcase name="advisorTest1()" classname="hello2.proxy.advisor.AdvisorTest" time="0.044"/>
+  <system-out><![CDATA[00:53:46.362 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 실행
+00:53:46.364 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - save 호출
+00:53:46.365 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 종료 resultTime=1
+00:53:46.366 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 실행
+00:53:46.366 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - find 호출
+00:53:46.366 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 종료 resultTime=0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
