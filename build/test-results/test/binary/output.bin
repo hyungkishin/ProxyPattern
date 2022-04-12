@@ -1,5 +1,5 @@
-�00:25:55.206 [Test worker] INFO hello2.proxy.proxyfactory.ProxyFactoryTest - targetClass=class hello2.proxy.common.service.ServiceImpl
-u00:25:55.208 [Test worker] INFO hello2.proxy.proxyfactory.ProxyFactoryTest - proxyClass=class com.sun.proxy.$Proxy12
-Y00:25:55.210 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 실행
-V00:25:55.211 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - save 호출
-f00:25:55.211 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 종료 resultTime=0
+�00:59:35.051 [Test worker] INFO hello2.proxy.proxyfactory.ProxyFactoryTest - targetClass=class hello2.proxy.common.service.ServiceImpl
+�00:59:35.053 [Test worker] INFO hello2.proxy.proxyfactory.ProxyFactoryTest - proxyClass=class hello2.proxy.common.service.ServiceImpl$$EnhancerBySpringCGLIB$$6f36c863
+Y00:59:35.054 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 실행
+V00:59:35.060 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - save 호출
+f00:59:35.060 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 종료 resultTime=6

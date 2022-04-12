@@ -1,6 +1,4 @@
 
-7
-HELP.md,1/a/1a273f73b7a477b0745593641bd708a6182c7ad5
 ]
 -src/main/java/hello2/proxy/trace/TraceId.java,9/0/90784f6f7c68de7beb7eb13da409a312e41154c9
 s
@@ -85,13 +83,13 @@ i
 Proxy.md,d/8/d83c62ce43d6db0d55159c4afb66ce273c5dba0f
 e
 5src/test/java/hello2/proxy/ProxyApplicationTests.java,6/a/6ae3aa57c7d3a38be09f9af4c0803e4fd40b0c72
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-n
->src/test/java/hello2/proxy/common/service/ConcreteService.java,e/4/e4c69b28a2f3e15ca7c2da07a7191eb0b070b2f0
 p
 @src/test/java/hello2/proxy/cglib/code/TimeMethodInterceptor.java,6/5/65dda2b14ec99785088552366d0f41305596fa65
 j
 :src/test/java/hello2/proxy/common/service/ServiceImpl.java,4/5/45cbcc4ea35880888337acc65e98886113295eae
 o
 ?src/test/java/hello2/proxy/common/service/ServiceInterface.java,3/2/32c45581d2fc28198d6e867556541fae85bc27ae
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
+n
+>src/test/java/hello2/proxy/common/service/ConcreteService.java,e/4/e4c69b28a2f3e15ca7c2da07a7191eb0b070b2f0

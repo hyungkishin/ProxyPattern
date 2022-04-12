@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="hello2.proxy.proxyfactory.ProxyFactoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-11T15:25:55" hostname="sinhyeong-giui-MacBookPro.local" time="0.046">
+<testsuite name="hello2.proxy.proxyfactory.ProxyFactoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-11T15:59:34" hostname="sinhyeong-giui-MacBookPro.local" time="0.088">
   <properties/>
-  <testcase name="인터페이스가 있으면 JDK 동적 프록시가 사용됩니다." classname="hello2.proxy.proxyfactory.ProxyFactoryTest" time="0.046"/>
-  <system-out><![CDATA[00:25:55.206 [Test worker] INFO hello2.proxy.proxyfactory.ProxyFactoryTest - targetClass=class hello2.proxy.common.service.ServiceImpl
-00:25:55.208 [Test worker] INFO hello2.proxy.proxyfactory.ProxyFactoryTest - proxyClass=class com.sun.proxy.$Proxy12
-00:25:55.210 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 실행
-00:25:55.211 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - save 호출
-00:25:55.211 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 종료 resultTime=0
+  <testcase name="ProxyTargetClass 옵션을 사용하면 인터페이스가 있어도, CGLIB 를 사용하고, 클래스 기반 프록시를 사용한다." classname="hello2.proxy.proxyfactory.ProxyFactoryTest" time="0.088"/>
+  <system-out><![CDATA[00:59:35.051 [Test worker] INFO hello2.proxy.proxyfactory.ProxyFactoryTest - targetClass=class hello2.proxy.common.service.ServiceImpl
+00:59:35.053 [Test worker] INFO hello2.proxy.proxyfactory.ProxyFactoryTest - proxyClass=class hello2.proxy.common.service.ServiceImpl$$EnhancerBySpringCGLIB$$6f36c863
+00:59:35.054 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 실행
+00:59:35.060 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - save 호출
+00:59:35.060 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 종료 resultTime=6
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
