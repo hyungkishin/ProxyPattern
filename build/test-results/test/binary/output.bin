@@ -1,6 +1,8 @@
-Y00:53:46.362 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 실행
-V00:53:46.364 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - save 호출
-f00:53:46.365 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 종료 resultTime=1
-Y00:53:46.366 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 실행
-V00:53:46.366 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - find 호출
-f00:53:46.366 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 종료 resultTime=0
+�22:06:10.271 [Test worker] INFO hello2.proxy.advisor.AdvisorTest - 포인트컷 호출 method=save targetClass=class hello2.proxy.common.service.ServiceImpl
+c22:06:10.273 [Test worker] INFO hello2.proxy.advisor.AdvisorTest - 포인트컷 결과 result=true
+Y22:06:10.275 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 실행
+V22:06:10.275 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - save 호출
+f22:06:10.275 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 종료 resultTime=0
+�22:06:10.275 [Test worker] INFO hello2.proxy.advisor.AdvisorTest - 포인트컷 호출 method=find targetClass=class hello2.proxy.common.service.ServiceImpl
+d22:06:10.275 [Test worker] INFO hello2.proxy.advisor.AdvisorTest - 포인트컷 결과 result=false
+V22:06:10.275 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - find 호출
