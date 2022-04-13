@@ -53,14 +53,8 @@ z
 Jsrc/test/java/hello2/proxy/pureproxy/proxy/code/TimeInvocationHandler.java,7/f/7f429b4f3c9c63510a6eefefb3c9292bf679930e
 p
 @src/test/java/hello2/proxy/pureproxy/proxy/ProxyPatternTest.java,6/6/66cc415d9a86ada47bdae5e637467d61f2c5f2b8
-ƒ
-Ssrc/main/java/hello2/proxy/config/v2_dynamicproxy/handler/LogTraceBasicHandler.java,c/0/c0d6ddee5e2a03b468e95c3ce7026dd17c6f9b88
 n
 >src/test/java/hello2/proxy/jdkdynamic/JdkDynamicProxyTest.java,e/c/eca04b0792be7e2bcec442191d058e4e307fe8e7
-~
-Nsrc/main/java/hello2/proxy/config/v2_dynamicproxy/DynamicProxyBasicConfig.java,5/9/59f9f68fd0d79612cce3a7798736f7654f13c255
-`
-0src/main/java/hello2/proxy/ProxyApplication.java,1/8/1899a0a3294f7e98bb6cce3498e78384eaf870a0
 l
 <src/main/java/hello2/proxy/app/v1/OrderRepositoryV1Impl.java,2/6/261e6ff93cdaea8d58252b4f4df453150cf4693b
 h
@@ -77,8 +71,6 @@ i
 9src/test/java/hello2/proxy/jdkdynamic/ReflectionTest.java,8/6/865fd442a038789e1cdb67c7c9394d9b1ed8265f
 u
 Esrc/test/java/hello2/proxy/jdkdynamic/code/TimeInvocationHandler.java,2/7/272308c23bb9a4c862b3eab6117b1b4d6b9a6313
-i
-9src/main/java/hello2/proxy/app/v1/OrderServiceV1Impl.java,5/4/54e43dcdb7f8d8e095daec0ee194f1bbd21da4e2
 8
 Proxy.md,d/8/d83c62ce43d6db0d55159c4afb66ce273c5dba0f
 p
