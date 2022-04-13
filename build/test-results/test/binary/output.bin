@@ -1,4 +1,3 @@
-Y22:16:13.797 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 실행
-V22:16:13.798 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - save 호출
-f22:16:13.798 [Test worker] INFO hello2.proxy.common.advice.TimeAdvice - TimeProxy 종료 resultTime=0
-V22:16:13.799 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - find 호출
+W23:27:56.404 [Test worker] INFO hello2.proxy.advisor.MultiAdvisorTest - advice2 호출
+W23:27:56.405 [Test worker] INFO hello2.proxy.advisor.MultiAdvisorTest - advice1 호출
+V23:27:56.405 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - save 호출

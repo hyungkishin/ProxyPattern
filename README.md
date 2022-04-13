@@ -130,5 +130,107 @@
 
 ![img_8.png](img_8.png)
 
+### 스프링이 제공하는 PointCut 사용시
+
+```java
+    @Test
+    @DisplayName("스프링이 제공하는 포인트컷")
+    void advisorTest3() {
+        ServiceInterface target = new ServiceImpl();
+        ProxyFactory proxyFactory = new ProxyFactory(target);
+        final NameMatchMethodPointcut pointcut = new NameMatchMethodPointcut(); // Spring 이 제공하는 포인트컷
+        pointcut.setMappedName("save"); // method 이름이 save 인 경우에
+        DefaultPointcutAdvisor advisor = new DefaultPointcutAdvisor(pointcut, new TimeAdvice());
+        proxyFactory.addAdvisor(advisor);
+        ServiceInterface proxy = (ServiceInterface) proxyFactory.getProxy();
+
+        proxy.save();
+        proxy.find();
+    }
+```
+- new NameMatchMethodPointcut(); 인스턴스를 생성해 pointcut 변수.setMappedName 에 "save" 를 지정해주자
+- proxy.save(); // save 는 호출가능 
+- proxy.find(); // find 는 호출불가인데, 지금은 단건만 가능하다.
+- 둘다 호출은 지금상황에서 불가하다.
+- 그림 으로 확인시, 아래와 같다.
+  - ![img_9.png](img_9.png)
+- 어드바이저는 하나의 포인트컷과 하나의 어드바이스를 가지고있다, 하나의 target 에 여러 어드바이스를 적용해야 한다면.
+  - 현재 방법에서는 프록시를 여러개 만들면 된다.
+  - ![img_10.png](img_10.png)
+
+```java
+
+@Test
+@DisplayName("여러 프록시")
+    void multiAdvisorTest1() {
+            // client -> proxy2(advisor2) -> proxy1(advisor1) -> target
+
+            // 프록시 1 생성
+            ServiceInterface target = new ServiceImpl();
+            ProxyFactory proxyFactory = new ProxyFactory(target);
+            DefaultPointcutAdvisor advisor1 = new DefaultPointcutAdvisor(Pointcut.TRUE, new Advice1());
+            proxyFactory.addAdvisor(advisor1);
+            ServiceInterface proxy1 = (ServiceInterface) proxyFactory.getProxy();
+
+            // 프록시 2 생성 target -> proxy1 입력
+            ProxyFactory proxyFactory2 = new ProxyFactory(proxy1);
+            DefaultPointcutAdvisor advisor2 = new DefaultPointcutAdvisor(Pointcut.TRUE, new Advice2());
+            proxyFactory2.addAdvisor(advisor2);
+            ServiceInterface proxy2 = (ServiceInterface) proxyFactory2.getProxy();
+
+            // 실행
+            proxy2.save();
+            }
+
+static class Advice1 implements MethodInterceptor {
+
+  @Override
+  public Object invoke(final MethodInvocation invocation) throws Throwable {
+    log.info("advice1 호출");
+    return invocation.proceed();
+  }
+}
+
+static class Advice2 implements MethodInterceptor {
+
+  @Override
+  public Object invoke(final MethodInvocation invocation) throws Throwable {
+    log.info("advice2 호출");
+    return invocation.proceed();
+  }
+}
+
+```
+- 여러개 만들었더니 문제가 생겼다.
+- 프록시를 n번 호출하는데 부담스럽다.
+- 하나의 프록시에 여러 어드바이저를 만들수 있는 방법은 없을까 하면 역시 갓 스프링.
+- ![img_11.png](img_11.png)
+
+```java
+    @Test
+    @DisplayName("하나의 프록시, 여러 어드바이저")
+    void multiAdvisorTest2() {
+        // client -> proxy -> advisor2 -> advisor1 -> target
+        DefaultPointcutAdvisor advisor1 = new DefaultPointcutAdvisor(Pointcut.TRUE, new Advice1());
+        DefaultPointcutAdvisor advisor2 = new DefaultPointcutAdvisor(Pointcut.TRUE, new Advice2());
+
+        ServiceInterface target = new ServiceImpl();
+        ProxyFactory proxyFactory = new ProxyFactory(target);
+
+        proxyFactory.addAdvisor(advisor2); // 2번 어드바이저
+        proxyFactory.addAdvisor(advisor1); // 1번 어드바이저
+        
+        ServiceInterface proxy = (ServiceInterface) proxyFactory.getProxy();
+
+        // 실향
+        proxy.save();
+    }
+```
+- 약간 허무하다.
+- addAdvisor 에 2개 를 등록해주면 된다.
+- 원하는만큼 등록하는 순서대로 advisor 가 호출된다.
+- ![img_12.png](img_12.png)
+- 여기서 정말 중요한게, 스프링은 AOP 를 적용할때, 최적화를 진행해서 하나만 만들고, 하나의 프록시에 여러 어드바이저를 적용한다.
+- 정리하면, 하나의 target 에 여러 AOP 가 적용되어도, 스프링의 AOP 는 target 마다 하나의 프록시만 생성한다.
 
 이미지, 지식 출처 - 김영한 스프링-핵심-원리-PDF
