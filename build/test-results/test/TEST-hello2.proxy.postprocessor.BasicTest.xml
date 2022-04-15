@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="hello2.proxy.postprocessor.BasicTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-14T13:24:23" hostname="sinhyeong-giui-MacBookPro.local" time="0.175">
+  <properties/>
+  <testcase name="basicConfig()" classname="hello2.proxy.postprocessor.BasicTest" time="0.175"/>
+  <system-out><![CDATA[22:24:23.090 [Test worker] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@146587a2
+22:24:23.098 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+22:24:23.155 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+22:24:23.156 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+22:24:23.156 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+22:24:23.157 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+22:24:23.161 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'basicTest.BasicConfig'
+22:24:23.164 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'beanA'
+22:24:23.180 [Test worker] INFO hello2.proxy.postprocessor.BasicTest$A - hello A
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

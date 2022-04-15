@@ -261,3 +261,51 @@ static class Advice2 implements MethodInterceptor {
     > 스프링이 빈 저장소에 등록할 목적으로 생성한 객체를 빈 저장소에 등록하기 직전에 조작하고 싶다면 빈 후처리기를 사용하면 된다.
   빈 포스트 프로세서( BeanPostProcessor )는 번역하면 빈 후처리기인데, 이름 그대로 빈을 생성한 후에 무언가를 처리하는 용도로 사용한다.
   이미지, 지식 출처 - 김영한 스프링-핵심-원리-PDF
+
+```java
+
+public class BasicTest {
+
+    @Test
+    void basicConfig() {
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BasicConfig.class);
+
+        // A는 빈으로 등록된다.
+        A a = applicationContext.getBean("beanA", A.class);
+        a.helloA();
+
+        // B 는 빈으로 등록되지 않는다.
+        Assertions.assertThrows(NoSuchBeanDefinitionException.class, () -> applicationContext.getBean(B.class));
+    }
+
+    @Slf4j
+    @Configuration
+    static class BasicConfig {
+        @Bean(name= "beanA")
+        public A a() {
+            return new A();
+        }
+    }
+
+    @Slf4j
+    static class A {
+        public void helloA() {
+            log.info("hello A");
+        }
+    }
+
+    @Slf4j
+    static class B {
+        public void helloB() {
+            log.info("hello B");
+        }
+    }
+
+}
+```
+
+- 위의 예제는 간단한 빈 후처리기 준비과정의 한 예이다.
+1. new AnnotationConfigApplicationContext() 를 잠시 짚고 넘어가자...
+  - AnnotationConfigApplicationContext는 자바 설정에서 정보를 읽어와 빈 객체를 생성, 관리한다.
+  - AnnotationConfigApplicationContext는 AppContext에 정의한 @Bean 설정 정보를 읽어와 Greeter 객체를 생성, 초기화한다.
+2. [1] 번에서 Bean BasicConfig 클래스를 등록했다. @Configuration 을 사용함으로써 스프링 컨테이너에 

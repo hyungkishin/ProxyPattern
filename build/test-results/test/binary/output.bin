@@ -1,3 +1,9 @@
-W23:27:56.404 [Test worker] INFO hello2.proxy.advisor.MultiAdvisorTest - advice2 í˜¸ì¶œ
-W23:27:56.405 [Test worker] INFO hello2.proxy.advisor.MultiAdvisorTest - advice1 í˜¸ì¶œ
-V23:27:56.405 [Test worker] INFO hello2.proxy.common.service.ServiceImpl - save í˜¸ì¶œ
+Ë22:24:23.090 [Test worker] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@146587a2
+å22:24:23.098 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+Ö22:24:23.155 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+Ô22:24:23.156 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+á22:24:23.156 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+Þ22:24:23.157 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+«22:24:23.161 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'basicTest.BasicConfig'
+›22:24:23.164 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'beanA'
+Q22:24:23.180 [Test worker] INFO hello2.proxy.postprocessor.BasicTest$A - hello A
