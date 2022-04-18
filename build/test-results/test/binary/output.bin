@@ -1,9 +1,12 @@
-Ë22:24:23.090 [Test worker] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@146587a2
-å22:24:23.098 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
-Ö22:24:23.155 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
-Ô22:24:23.156 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
-á22:24:23.156 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
-Þ22:24:23.157 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
-«22:24:23.161 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'basicTest.BasicConfig'
-›22:24:23.164 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'beanA'
-Q22:24:23.180 [Test worker] INFO hello2.proxy.postprocessor.BasicTest$A - hello A
+Ë21:59:21.514 [Test worker] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@146587a2
+å21:59:21.523 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+Ö21:59:21.588 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+Ô21:59:21.590 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+á21:59:21.591 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+Þ21:59:21.591 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+¨21:59:21.593 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'helloPostProcessor'
+Ä21:59:21.594 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'beanPostProcessorTest.BasicPostProcessorConfig'
+š21:59:21.596 [Test worker] INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'beanPostProcessorTest.BasicPostProcessorConfig' of type [hello2.proxy.postprocessor.BeanPostProcessorTest$BasicPostProcessorConfig$$EnhancerBySpringCGLIB$$39b1d3dc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+›21:59:21.606 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'beanA'
+µ21:59:21.606 [Test worker] INFO hello2.proxy.postprocessor.BeanPostProcessorTest$AtoBPostProcessor - beanName=beanA bean=hello2.proxy.postprocessor.BeanPostProcessorTest$A@3b1bb3ab
+]21:59:21.616 [Test worker] INFO hello2.proxy.postprocessor.BeanPostProcessorTest$B - hello B

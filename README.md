@@ -304,13 +304,83 @@ public class BasicTest {
 }
 ```
 
-- 위의 예제는 간단한 빈 후처리기 준비과정의 한 예이다.
-1. new AnnotationConfigApplicationContext() 를 잠시 짚고 넘어가자...
+### 위의 예제는 간단한 빈 확인 예제이다.
+1. 잠깐. new AnnotationConfigApplicationContext() 를 잠시 짚고 넘어가자.
   - AnnotationConfigApplicationContext는 자바 설정에서 정보를 읽어와 빈 객체를 생성, 관리한다.
   - AnnotationConfigApplicationContext는 AppContext에 정의한 @Bean 설정 정보를 읽어와 Greeter 객체를 생성, 초기화한다.
-2. [1] 번에서 Bean BasicConfig 클래스를 등록했다. @Configuration 을 사용함으로써 스프링 컨테이너에 등록됨.
+2. [1] 번에서 Bean BasicConfig 클래스를 등록했다. @Configuration 을 사용함으로써 스프링 컨테이너에 등록된다.
 
 - @Bean 이나 컴포넌트 스캔으로 스프링 빈을 등록하면, 스프링은 대상 객체를 생성하고 스프링 컨테이너 내부의 빈 저장소에 등록한다. 그리고 이후에는 스프링 컨테이너를 통해 등록한 스프링 빈을 조회해서 사용하면 된다.
-- 빈 후처리기 - BeanPostProcessor
+
+### 빈 후처리기 - BeanPostProcessor
   - 스프링이 빈 저장소에 등록할 목적으로 생성한 객체를 빈 저장소에 등록하기 직전에 조작하고 싶다면 빈 후처리기를 사용하면 된다.
   빈 포스트 프로세서( BeanPostProcessor )는 번역하면 빈 후처리기인데, 이름 그대로 빈을 생성한 후에 무언가를 처리하는 용도로 사용한다.
+
+```java
+public class BeanPostProcessorTest {
+
+    @Test
+    void basicConfig() {
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BasicPostProcessorConfig.class);
+
+        // beanA 이름으로 B 객체가 등록된다.
+        B b = applicationContext.getBean("beanA", B.class);
+        b.helloB();
+
+        // B 는 빈으로 등록되지 않는다.
+        Assertions.assertThrows(NoSuchBeanDefinitionException.class, () -> applicationContext.getBean(A.class));
+    }
+
+    @Configuration
+    static class BasicPostProcessorConfig {
+        @Bean(name = "beanA")
+        public A a() { return new A(); }
+
+        @Bean
+        public AtoBPostProcessor helloPostProcessor() {
+            return new AtoBPostProcessor();
+        }
+    }
+
+    @Slf4j
+    static class A {
+        public void helloA() { log.info("helloA"); }
+    }
+
+    @Slf4j
+    static class B {
+        public void helloB() { log.info("hello B"); }
+    }
+
+    @Slf4j
+    static class AtoBPostProcessor implements BeanPostProcessor {
+
+        @Override
+        public Object postProcessAfterInitialization(final Object bean, final String beanName) throws BeansException {
+            log.info("beanName={} bean={}",beanName, bean);
+            if (bean instanceof A) {
+                return new B();
+            }
+            return bean;
+        }
+    }
+}
+```
+
+### AtoBPostProcessor
+- 빈 후처리기 이다. 인터페이스인 BeanPostProcessor 를 구현하고, 스프링 빈으로 등록하면 스프링 컨테이너가 빈 후처리기로 인식하고 동작한다.
+- 이 빈 후처리기는 A 객체에 새로운 B 객체로 바꿔치기 한다. 파라미터로 넘어오는 빈 `bean` 객체가 A 의 인스턴스이면 새로운 B beanName=beanA, bean=A 객체의 인스턴스가 빈 후처리기에 넘어온 것을 확인할 수 있다.
+- 아래 출력 결과 참조
+```java
+[Test worker] INFO hello2.proxy.postprocessor.BeanPostProcessorTest$AtoBPostProcessor - beanName=beanA bean=hello2.proxy.postprocessor.BeanPostProcessorTest$A@3b1bb3ab
+[Test worker] INFO hello2.proxy.postprocessor.BeanPostProcessorTest$B - hello B
+```
+
+### 정리
+
+![img_14.png](img_14.png)
+- 빈 후처리기는 빈을 조작하고 변경할 수 있는 후킹 포인트이다.
+이것은 빈객체를 조작하거나 심지어 다른 객체로 바꾸어 버릴 수 있을 정도로 막강하다.
+여기서 조작이라는 것은 해당 객체의 특정 메서드를 호출하는 것을 뜻한다.
+일반적으로 스프링 컨테이너가 등록하는, 특히 컴포넌트 스캔의 대상이 되는 빈들은 중간에 조작할 방법이 없는데, 빈 후처리기를 사용하면 개발자가 등록하는 모든 빈을 중간에 조작할 수 있다.
+- 이 말은 "빈 객체를 프록시로 교체" 하는 것도 가능하다는 뜻이다.

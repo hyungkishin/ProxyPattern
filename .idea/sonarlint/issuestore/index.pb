@@ -85,8 +85,6 @@ h
 HELP.md,1/a/1a273f73b7a477b0745593641bd708a6182c7ad5
 n
 >src/test/java/hello2/proxy/common/service/ConcreteService.java,e/4/e4c69b28a2f3e15ca7c2da07a7191eb0b070b2f0
-e
-5src/test/java/hello2/proxy/ProxyApplicationTests.java,6/a/6ae3aa57c7d3a38be09f9af4c0803e4fd40b0c72
 o
 ?src/test/java/hello2/proxy/common/service/ServiceInterface.java,3/2/32c45581d2fc28198d6e867556541fae85bc27ae
 _
