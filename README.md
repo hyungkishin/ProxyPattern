@@ -391,3 +391,4 @@ public class BeanPostProcessorTest {
 더 나아가서 설정 파일에 있는 수 많은 프록시 생성 코드도 한번에 제거할 수 있다.
 
 ![img_15.png](img_15.png)
+
