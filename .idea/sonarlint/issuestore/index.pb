@@ -7,12 +7,6 @@ e
 5src/main/java/hello2/proxy/app/v2/OrderServiceV2.java,0/e/0ebb703242dafa966bfc97462579a2d4360f2a6c
 h
 8src/main/java/hello2/proxy/app/v2/OrderControllerV2.java,2/b/2b77128eb38be8394110e6b127a62114a0b24ec4
-h
-8src/main/java/hello2/proxy/app/v3/OrderControllerV3.java,e/b/eb51facbf716f872679fe8c85fc5f4638770d283
-h
-8src/main/java/hello2/proxy/app/v3/OrderRepositoryV3.java,4/f/4fb37d194f29f19fd0137a99f616a2df55002cd9
-e
-5src/main/java/hello2/proxy/app/v3/OrderServiceV3.java,c/f/cfa8674cd77d9209b2ce1fb085cf8a590ed38c70
 ‹
 [src/main/java/hello2/proxy/config/v1_proxy/concrete_proxy/OrderControllerConcreteProxy.java,9/e/9e4d8f6e3fe9f247b4a5a8ea738c24b7aa9dc418
 ‹
@@ -71,8 +65,6 @@ i
 9src/test/java/hello2/proxy/jdkdynamic/ReflectionTest.java,8/6/865fd442a038789e1cdb67c7c9394d9b1ed8265f
 u
 Esrc/test/java/hello2/proxy/jdkdynamic/code/TimeInvocationHandler.java,2/7/272308c23bb9a4c862b3eab6117b1b4d6b9a6313
-8
-Proxy.md,d/8/d83c62ce43d6db0d55159c4afb66ce273c5dba0f
 p
 @src/test/java/hello2/proxy/cglib/code/TimeMethodInterceptor.java,6/5/65dda2b14ec99785088552366d0f41305596fa65
 j
@@ -93,14 +85,8 @@ m
 =src/test/java/hello2/proxy/proxyfactory/ProxyFactoryTest.java,b/9/b9d76181f4e0be3f368f63653bd460f028c0c314
 ~
 Nsrc/main/java/hello2/proxy/config/v2_dynamicproxy/DynamicProxyBasicConfig.java,5/9/59f9f68fd0d79612cce3a7798736f7654f13c255
-|
-Lsrc/main/java/hello2/proxy/config/v3_proxyFactory/advice/LogTraceAdvice.java,4/8/48c1b792fff38835bdaa7f29853b1e7bf5f33f0f
-{
-Ksrc/main/java/hello2/proxy/config/v3_proxyFactory/ProxyFactoryConfigV1.java,a/6/a64697cd938e1bdffe4188c7e937f12bd1461f1f
 {
 Ksrc/main/java/hello2/proxy/config/v3_proxyFactory/ProxyFactoryConfigV2.java,8/3/839f217b43879832611b0a1233dda5be8b06ce6c
-`
-0src/main/java/hello2/proxy/ProxyApplication.java,1/8/1899a0a3294f7e98bb6cce3498e78384eaf870a0
 i
 9src/main/java/hello2/proxy/app/v1/OrderServiceV1Impl.java,5/4/54e43dcdb7f8d8e095daec0ee194f1bbd21da4e2
 ƒ
