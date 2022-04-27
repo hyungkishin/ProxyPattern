@@ -357,7 +357,7 @@ public class BeanPostProcessorTest {
 
         @Override
         public Object postProcessAfterInitialization(final Object bean, final String beanName) throws BeansException {
-            log.info("beanName={} bean={}",beanName, bean);
+            log.info("beanName={} bean={}", beanName, bean);
             if (bean instanceof A) {
                 return new B();
             }
@@ -383,7 +383,8 @@ public class BeanPostProcessorTest {
 - 빈 후처리기는 빈을 조작하고 변경할 수 있는 후킹 포인트이다.
 이것은 빈객체를 조작하거나 심지어 다른 객체로 바꾸어 버릴 수 있을 정도로 막강하다.
 여기서 조작이라는 것은 해당 객체의 특정 메서드를 호출하는 것을 뜻한다.
-일반적으로 스프링 컨테이너가 등록하는, 특히 컴포넌트 스캔의 대상이 되는 빈들은 중간에 조작할 방법이 없는데, 빈 후처리기를 사용하면 개발자가 등록하는 모든 빈을 중간에 조작할 수 있다.
+일반적으로 스프링 컨테이너가 등록하는, 특히 컴포넌트 스캔의 대상이 되는 빈들은 중간에 조작할 방법이 없는데,
+빈 후처리기를 사용하면 개발자가 등록하는 모든 빈을 중간에 조작할 수 있다.
 - 이 말은 "빈 객체를 프록시로 교체" 하는 것도 가능하다는 뜻이다.
 
 - 빈 후처리기를 사용해서 실제 객체 대신 프록시를 스프링 빈으로 등록해보자.
