@@ -503,3 +503,11 @@ implementation 'org.springframework.boot:spring-boot-starter-aop'
 - * : 모든 반환 타입
   - hello.proxy.app.. : 해당 패키지와 그 하위 패키지 *(..) : * 모든 메서드 이름, (..) 파라미터는 상관 없음
   - 쉽게 이야기해서 hello.proxy.app 패키지와 그 하위 패키지의 모든 메서드는 포인트컷의 매칭 대상이 된다.
+
+### 주의
+- advisor1,advisor2 에있는 @Bean 은 꼭 주석처리 해주어야 한다.
+  - 그렇지않으면어드바이저가중복 등록된다. 
+- 표현식을 다음과 같이 수정했다.
+  - execution(* hello.proxy.app..*(..)) && !execution(* hello.proxy.app..noLog(..))
+  && : 두 조건을 모두 만족해야 함 ! : 반대
+  hello.proxy.app 패키지와 하위 패키지의 모든 메서드는 포인트컷의 매칭하되, noLog() 메서드는 제외하라는 뜻이다.
