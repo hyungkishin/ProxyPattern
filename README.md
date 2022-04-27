@@ -74,21 +74,21 @@
     - 메서드의 메타정보를 얻고 , 동적으로 바꿔가면서 호출하ㅓㄴ다.
   - JDK 동적 프록시
     - 일일히 프록시를 만들어주는게 아니라, 동적으로 프록시를 생성.
-    ![img_1.png](img_1.png)
+    ![img_1.png](img/img_1.png)
   - CGLIB 구체클래스를 상속받아 프록시를 만들 수 있다.
-    - ![img_2.png](img_2.png)
+    - ![img_2.png](img/img_2.png)
 
 
 ### Spring 프록시 팩토리 ! 
   - 인터페이스가 있으면 -> JDK 동적 프록시를 사용하고,
   - 구체 클래스가 있으면 -> CGLIB 를 사용한다.
   - 그리고 이 설정도 변경 가능하다.
-  - ![img_3.png](img_3.png)
-  - ![img_4.png](img_4.png)
+  - ![img_3.png](img/img_3.png)
+  - ![img_4.png](img/img_4.png)
   - 두 기술을 함께 사용할 때 부가 기능을 적용하기 위해 Spring 에서 Advice 라는 개념을 도입했다.
   - 개발자는 InvocationHandler 나 MethodInterceptor 를 신경 쓰기 않아두 된다.
-  - ![img_5.png](img_5.png)
-  - ![img_6.png](img_6.png)
+  - ![img_5.png](img/img_5.png)
+  - ![img_6.png](img/img_6.png)
 
 
 ---
@@ -106,7 +106,7 @@
 포인트컷은 대상 여부를 확인하는 필터 역할만 담당하고, 어드바이스는 깔끔하게 부가 기능 로직만 담당한다. 둘을 합치면 어드바이저가 된다.
 스프링의 어드바이저는 하나의 포인트컷 + 하나의 어드바이스로 구성된다.
 
-![img_7.png](img_7.png)
+![img_7.png](img/img_7.png)
 
 
 ```java
@@ -128,7 +128,7 @@
     }
 ```
 
-![img_8.png](img_8.png)
+![img_8.png](img/img_8.png)
 
 ### 스프링이 제공하는 PointCut 사용시
 
@@ -153,10 +153,10 @@
 - proxy.find(); // find 는 호출불가인데, 지금은 단건만 가능하다.
 - 둘다 호출은 지금상황에서 불가하다.
 - 그림 으로 확인시, 아래와 같다.
-  - ![img_9.png](img_9.png)
+  - ![img_9.png](img/img_9.png)
 - 어드바이저는 하나의 포인트컷과 하나의 어드바이스를 가지고있다, 하나의 target 에 여러 어드바이스를 적용해야 한다면.
   - 현재 방법에서는 프록시를 여러개 만들면 된다.
-  - ![img_10.png](img_10.png)
+  - ![img_10.png](img/img_10.png)
 
 ```java
 
@@ -204,7 +204,7 @@ static class Advice2 implements MethodInterceptor {
 - 여러개 만들었더니 문제가 생겼다.
 - 프록시를 n번 호출하는데 부담스럽다.
 - 하나의 프록시에 여러 어드바이저를 만들수 있는 방법은 없을까 하면 역시 갓 스프링.
-- ![img_11.png](img_11.png)
+- ![img_11.png](img/img_11.png)
 
 ```java
     @Test
@@ -229,7 +229,7 @@ static class Advice2 implements MethodInterceptor {
 - 약간 허무하다.
 - addAdvisor 에 2개 를 등록해주면 된다.
 - 원하는만큼 등록하는 순서대로 advisor 가 호출된다.
-- ![img_12.png](img_12.png)
+- ![img_12.png](img/img_12.png)
 - 여기서 정말 중요한게, 스프링은 AOP 를 적용할때, 최적화를 진행해서 하나만 만들고, 하나의 프록시에 여러 어드바이저를 적용한다.
 - 정리하면, 하나의 target 에 여러 AOP 가 적용되어도, 스프링의 AOP 는 target 마다 하나의 프록시만 생성한다.
 
@@ -254,7 +254,7 @@ static class Advice2 implements MethodInterceptor {
 ### 두가지 문제를 한번에 해결하는 방법이 빈 후처리기 이다.
 
 ### 빈 후처리기
-![img_13.png](img_13.png)
+![img_13.png](img/img_13.png)
 
 - @Bean 이나 컴포넌트 스캔으로 스프링 빈을 등록하면, 스프링은 대상 객체를 생성하고 스프링 컨테이너 내부의 빈 저장소에 등록한다. 그리고 이후에는 스프링 컨테이너를 통해 등록한 스프링 빈을 조회해서 사용하면 된다.
   - 빈 후처리기 - BeanPostProcessor
@@ -378,7 +378,7 @@ public class BeanPostProcessorTest {
 
 ### 정리
 
-![img_14.png](img_14.png)
+![img_14.png](img/img_14.png)
 
 ```
 정리
@@ -391,7 +391,7 @@ public class BeanPostProcessorTest {
 이 말은 빈 객체를 프록시로 교체하는 것도 가능하다는 뜻이다.
 ```
 
-![img_15.png](img_15.png)
+![img_15.png](img/img_15.png)
 
 - 프록시를 등록하는 코드가 다 사라지는 마법 :)
 - 프록시로 바꿔주는 그동안의 코드가 v4 의 beanPostProcessor 에 [HERE] 로 다들어갔다.
@@ -457,3 +457,49 @@ public class BeanPostProcessorTest {
 > 1. 프록시 적용 대상 여부를 체크해서 꼭 필요한 곳에만 프록시를 적용한다. (빈 후처리기 - 자동 프록시
      생성)
 > 2. 프록시의 어떤 메서드가 호출 되었을 때 어드바이스를 적용할 지 판단한다. (프록시 내부)
+
+### 스프링이 제공하는 빈 후처리기 1
+아래코드 build.gradle 에 추가 후 Gradle rebuild
+```
+implementation 'org.springframework.boot:spring-boot-starter-aop'
+```
+
+이 라이브러리를 추가하면 aspectjwever 라는 aspectJ 관련 라이브러리를 등록한다.
+스프링 부트가 AOP 관련 클래스를 자동으로 스프링 빈에 등록한다.
+* 부트가 없던 시절에는 @EnableAspectJAutoProxy 를 직접 입력했다고 한다 :) 
+
+### 자동 프록시 생성기 - AutoProxyCreator
+- 앞서 이야기한 스프링 부트 자동 설정으로 AnnotationAwareAspectJAutoProxyCreator 라는 빈 후처리기가 스프링 빈에 자동으로 등록된다.
+  - ![img_17.png](img/img_17.png)
+- 이름 그대로 자동으로 프록시를 생성해주는 빈 후처리기이다.
+- 이 빈 후처리기는 스프링 빈으로 등록된 Advisor 들을 자동으로 찾아서 프록시가 필요한 곳에 자동으로 프록시를 적용해준다.
+- Advisor 안에는 Pointcut 과 Advice 가 이미 모두 포함되어 있다. 따라서 Advisor 만 알고 있으면 그 안에있는 Pointcut 으로 어떤 스프링빈 에 프록시를 적용해야 할 지 알수있다.
+- 그리고 Advice 로 부가 기능을 적용하면 된다.
+- ![img_16.png](img/img_16.png)
+
+### 작동 과정
+- ![img.png](img_18.png)
+1. 생성: 스프링이 스프링 빈 대상이 되는 객체를 생성한다. ( @Bean , 컴포넌트 스캔 모두 포함)
+2. 전달: 생성된 객체를 빈 저장소에 등록하기 직전에 빈 후처리기에 전달한다.
+3. 모든 Advisor 빈 조회: 자동 프록시 생성기 - 빈 후처리기는 스프링 컨테이너에서 모든 Advisor 를 조회한다.
+4. 프록시 적용 대상 체크: 앞서 조회한 Advisor 에 포함되어 있는 포인트컷을 사용해서 해당 객체가 프록시를 적용할 대상인지 아닌지 판단한다. 이때 객체의 클래스 정보는 물론이고, 해당 객체의 모든 메서드를 포인트컷에 하나하나 모두 매칭해본다. 그래서 조건이 하나라도 만족하면 프록시 적용 대상이 된다. 예를 들어서 10개의 메서드 중에 하나만 포인트컷 조건에 만족해도 프록시 적용 대상이 된다.
+5. 프록시 생성: 프록시 적용 대상이면 프록시를 생성하고 반환해서 프록시를 스프링 빈으로 등록한다. 만약 프록시 적용 대상이 아니라면 원본 객체를 반환해서 원본 객체를 스프링 빈으로 등록한다.
+6. 빈 등록: 반환된 객체는 스프링 빈으로 등록된다.
+
+- ![img_1.png](img_19.png)
+
+중요: 포인트컷은 2가지에 사용된다.
+1. 프록시 적용 여부 판단 - 생성 단계
+   자동 프록시 생성기는 포인트컷을 사용해서 해당 빈이 프록시를 생성할 필요가 있는지 없는지 체크한다.
+   클래스 + 메서드 조건을 모두 비교한다. 이때 모든 메서드를 체크하는데, 포인트컷 조건에 하나하나 매칭해본다. 만약 조건에 맞는 것이 하나라도 있으면 프록시를 생성한다.
+   예) orderControllerV1 은 request() , noLog() 가 있다. 여기에서 request() 가 조건에 만족하므로 프록시를 생성한다. 만약 조건에 맞는 것이 하나도 없으면 프록시를 생성할 필요가 없으므로 프록시를 생성하지 않는다. 
+2. 어드바이스 적용 여부 판단 - 사용 단계
+   프록시가 호출되었을 때 부가 기능인 어드바이스를 적용할지 말지 포인트컷을 보고 판단한다. 앞서 설명한 예에서 orderControllerV1 은 이미 프록시가 걸려있다.
+   orderControllerV1 의 request() 는 현재 포인트컷 조건에 만족하므로 프록시는 어드바이스를 먼저 호출하고, target 을 호출한다.
+   orderControllerV1 의 noLog() 는 현재 포인트컷 조건에 만족하지 않으므로 어드바이스를 호출하지 않고 바로 target 만 호출한다.
+
+- AspectJExpressionPointcut : AspectJ 포인트컷 표현식을 적용할 수 있다.
+- execution(* hello.proxy.app..*(..)) : AspectJ가 제공하는 포인트컷 표현식이다. 이후 자세히 설명하겠다. 지금은 간단히 알아보자.
+- * : 모든 반환 타입
+  - hello.proxy.app.. : 해당 패키지와 그 하위 패키지 *(..) : * 모든 메서드 이름, (..) 파라미터는 상관 없음
+  - 쉽게 이야기해서 hello.proxy.app 패키지와 그 하위 패키지의 모든 메서드는 포인트컷의 매칭 대상이 된다.
