@@ -511,3 +511,6 @@ implementation 'org.springframework.boot:spring-boot-starter-aop'
   - execution(* hello.proxy.app..*(..)) && !execution(* hello.proxy.app..noLog(..))
   && : 두 조건을 모두 만족해야 함 ! : 반대
   hello.proxy.app 패키지와 하위 패키지의 모든 메서드는 포인트컷의 매칭하되, noLog() 메서드는 제외하라는 뜻이다.
+
+![img.png](img.png)
+![img_1.png](img_1.png)
