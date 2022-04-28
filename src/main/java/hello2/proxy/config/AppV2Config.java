@@ -4,7 +4,9 @@ import hello2.proxy.app.v2.OrderControllerV2;
 import hello2.proxy.app.v2.OrderRepositoryV2;
 import hello2.proxy.app.v2.OrderServiceV2;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class AppV2Config {
 
     @Bean
