@@ -71,7 +71,7 @@
 
 - 정리
   - 리플렉션은 프레임워크 개발이나 또는 매우 일반적인 공통 처리가 필요할 때 부분적으로 주의해서 사용해야 한다.
-    - 메서드의 메타정보를 얻고 , 동적으로 바꿔가면서 호출하ㅓㄴ다.
+    - 메서드의 메타정보를 얻고 , 동적으로 바꿔가면서 호출한다.
   - JDK 동적 프록시
     - 일일히 프록시를 만들어주는게 아니라, 동적으로 프록시를 생성.
     ![img_1.png](img/img_1.png)
@@ -86,7 +86,7 @@
   - ![img_3.png](img/img_3.png)
   - ![img_4.png](img/img_4.png)
   - 두 기술을 함께 사용할 때 부가 기능을 적용하기 위해 Spring 에서 Advice 라는 개념을 도입했다.
-  - 개발자는 InvocationHandler 나 MethodInterceptor 를 신경 쓰기 않아두 된다.
+  - 개발자는 InvocationHandler 나 MethodInterceptor 를 신경 쓰지 않아도 된다.
   - ![img_5.png](img/img_5.png)
   - ![img_6.png](img/img_6.png)
 
@@ -513,4 +513,12 @@ implementation 'org.springframework.boot:spring-boot-starter-aop'
   hello.proxy.app 패키지와 하위 패키지의 모든 메서드는 포인트컷의 매칭하되, noLog() 메서드는 제외하라는 뜻이다.
 
 ![img.png](img.png)
+- 그림 설명
+- 자동 프록시 생성기에서 빈이 자동으로 등록이 된다.
+- 스프링 컨테이너에서 먼저 모든 Advisor Bean 을 조회한다.
+- 그래서 대상이 맞는지 안맞는지를 PointCut 으로 프록시 적용 대상 체크를 한다.
+- pointCut 으로 메서드나 클래스가 하나라도 조건이 만족하면 프록시를 만들어준다.
+- 그래서 아래 그림을 만들게 된다.
 ![img_1.png](img_1.png)
+- 하나의 프록시에 여러 어드바이저를 만드는것이다.
+- 프록시는 하나만 생성되고 그안에 여러 어드바이저가 들어있다.
