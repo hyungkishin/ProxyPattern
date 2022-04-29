@@ -1,0 +1,10 @@
+
+2
+java:S1116"Remove this empty statement.(³¼ü©
+2
+java:S1116&"Remove this empty statement.(İùÍ
+7
+java:S11160"Remove this empty statement.(¬ÀÊ÷ùÿÿÿÿ
+w
+java:S1192"aDefine a constant instead of duplicating this literal "ProxyFactory proxy={}, target={}" 3 times.(³¼ü©
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(şÖ—ûÿÿÿÿ

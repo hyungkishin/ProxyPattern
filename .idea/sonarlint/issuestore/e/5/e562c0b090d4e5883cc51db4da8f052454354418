@@ -1,0 +1,10 @@
+
+z
+java:S1128"]Remove this unused import 'hello2.proxy.config.v2_dynamicproxy.handler.LogTraceBasicHandler'.(Á”î²8½£ò‘0
+s
+java:S1488"]Immediately return this expression instead of assigning it to the temporary variable "proxy".(›ø×
+x
+java:S1488"]Immediately return this expression instead of assigning it to the temporary variable "proxy".(­³‰ıÿÿÿÿ
+x
+java:S1488)"]Immediately return this expression instead of assigning it to the temporary variable "proxy".(µÒºĞûÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‚Ä«²
